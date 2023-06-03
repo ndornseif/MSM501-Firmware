@@ -1,5 +1,5 @@
-//MSM501-MainsReciprocalCounter Firmware version 1.0.6
-//Tested for hardware version 1.1.0
+//MSM501-MainsReciprocalCounter Firmware version 1.0.7
+//Build for hardware version 1.1.0
 
 //Pin definitions
 //Counter output connections starting at Y0.
@@ -29,7 +29,7 @@ const byte StatusLED = 18;
 const byte ConditionedSignal = 19;
 
 //The frequency of the reference clock in uHz.
-const float refClockFrequency = 1e6 * 1e6; //1 MHz multiplied by 1e6 to convert from Hz to uHz.
+const unsigned long long refClockFrequency = 1e6 * 1e6; //1 MHz 
 
 //Default time for a single measurment in ms.
 const unsigned long defaultGateTime = 60000;
@@ -87,10 +87,10 @@ unsigned long performMeasurement(unsigned long gateTime){
   digitalWrite(GateTime,LOW);
   delay(500);
   latchCounters();
-  float signalCounterValue = readCounter(0);
-  float referenceCounterValue = readCounter(1);
-  //All Frequency values are given in uHz.
-  unsigned long measuredFrequency = round((signalCounterValue * refClockFrequency) / referenceCounterValue);
+  unsigned long signalCounterValue = readCounter(0);
+  unsigned long referenceCounterValue = readCounter(1);
+  //All frequency values are given in uHz.
+  unsigned long measuredFrequency = (signalCounterValue * refClockFrequency) / referenceCounterValue;
   return measuredFrequency;
 }
 void setup() {

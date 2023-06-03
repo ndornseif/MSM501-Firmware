@@ -7,6 +7,7 @@ Find the hardware and documentation in this [repository](https://github.com/ndor
 This is just an arduino script you can upload using the official Arduino IDE.  
 Hardware and software are build around an Arduino nano.   
 The measured values are send out as uHz (in ascii) over the serial connection.  
+Default baudrate: 115200  
 
 ## Configuration
 Change constant `defaultGateTime` to vary the measurment time (value in ms).  
