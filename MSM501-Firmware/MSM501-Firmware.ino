@@ -1,4 +1,5 @@
 //MSM501-MainsReciprocalCounter Firmware version 1.0.6
+//Tested for hardware version 1.1.0
 
 //Pin definitions
 //Counter output connections starting at Y0.
