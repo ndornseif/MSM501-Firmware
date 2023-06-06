@@ -6,8 +6,15 @@ This is the firmware for MSM501-Mains Reciprocal Counters.
 Find the hardware and documentation in this [repository](https://github.com/ndornseif/MSM501-MainsReciprocalCounter).  
 This is just an arduino script you can upload using the official Arduino IDE.  
 Hardware and software are build around an Arduino nano.   
-The measured values are send out as uHz (in ascii) over the serial connection.  
-Default baudrate: 115200  
+Measurement results are in uHz and send out over serial.  
+They are send as ASCII and LF, CR seperated.  
+Default parameters: 115200 baud, 8 data, 1 stop, no parity
+
+## Example output
+```
+50020548\r\n
+50032928\r\n
+```
 
 ## Configuration
 Change constant `defaultGateTime` to vary the measurment time (value in ms).  
