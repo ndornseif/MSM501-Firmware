@@ -28,10 +28,10 @@ const byte StatusLED = 18;
 //Pin connected to the conditioned input signal. Currently unused.
 const byte ConditionedSignal = 19;
 
-//Correction factor for 1MHz internal clock: +6.8e6
+//Correction factor for 1MHz internal clock: +6.8e6 uHz
 //This correction factor was measured for a particular device.
 //If you dont want to measure your correction factor use zero.
-const unsigned long correctionFactor = 6.8e6;
+const unsigned long correctionFactor = 6.8e6; //in uHz
 
 //The frequency of the reference clock in uHz.
 const unsigned long long refClockFrequency = (1e6 * 1e6) + correctionFactor; //1 MHz * 1e6 uHz/Hz + correction factor
