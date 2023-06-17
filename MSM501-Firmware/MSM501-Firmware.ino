@@ -1,4 +1,4 @@
-//MSM501-MainsReciprocalCounter Firmware version 1.0.7
+//MSM501-MainsReciprocalCounter Firmware version 1.0.8
 //Build for hardware version 1.1.0
 
 //Pin definitions
@@ -28,16 +28,18 @@ const byte StatusLED = 18;
 //Pin connected to the conditioned input signal. Currently unused.
 const byte ConditionedSignal = 19;
 
-//Correction factor for 1MHz internal clock: +6.8e6 uHz
-//This correction factor was measured for a particular device.
-//If you dont want to measure your correction factor use zero.
-const unsigned long correctionFactor = 6.8e6; //in uHz
+//Correction offset for 1MHz internal clock: +6.8e6 uHz
+//This correction offset was measured for a particular device.
+//If you dont want to measure your correction offset use zero.
+//See the github for more info on correction:
+//https://github.com/ndornseif/MSM501-Firmware
+const unsigned long correctionOffset = 0; //in uHz
 
 //The frequency of the reference clock in uHz.
-const unsigned long long refClockFrequency = (1e6 * 1e6) + correctionFactor; //1 MHz * 1e6 uHz/Hz + correction factor
+const unsigned long long refClockFrequency = (1e6 * 1e6) + correctionOffset; //1 MHz * 1e6 uHz/Hz + correction factor
 
 //Default time for a single measurment in ms.
-const unsigned long defaultGateTime = 60000;
+const unsigned long defaultGateTime = 10000;
 
 //Resets reference and signal counters.
 void resetCounters(){
