@@ -39,7 +39,7 @@ Preferably 50 Hz or 60 Hz and a 50% duty cycle.
 All values should be entered in uHz.  
 Where f<sub>ref</sub> is the nominal reference frequency,  
 f<sub>cal</sub> the applied calibration frequency and f<sub>measured</sub> the recorded measurement result.  
-$correctionOffset = f_{ref} - (\frac{f_{cal}}{f_{measured}} \times f_{ref})$  
+$correctionOffset = f_{ref} - (\frac{f_{measured}}{f_{cal}} \times f_{ref})$  
 5. Enter the offset into the firmware.  
 
 ## Other
